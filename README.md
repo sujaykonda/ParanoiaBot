@@ -5,13 +5,13 @@ Paranoia Bot
 # Description
 
 This project is my discord bot, used in a few discord servers.
-In the code there is a file named save.js is a small library that I that saves only LISTS in saveFile.txt
+In the code there is a file named save.js is a small library that I that saves only LISTS in saveFile.txt.
 Also there is index.js which is code that is ran.
-There are many different commands in this bot
+There are many different commands in this bot.
 
 # Important Notice
 	
-This project is ongoing. A file named auth.json will not be shown because it contains my token
+This project is ongoing. A file named auth.json will not be shown because it contains my token.
 
 # How to invite this bot
 Link: https://discordapp.com/api/oauth2/authorize?client_id=671449501524951040&permissions=8&scope=bot

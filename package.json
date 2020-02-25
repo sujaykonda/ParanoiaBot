@@ -1,0 +1,10 @@
+{
+    "name": "paranoia-bot",
+    "version": "1.1.1",
+    "description": "Paranoia Bot",
+    "main": "index.js",
+    "author": "Sujay Konda",
+    "dependencies": {
+        "discord.js": "^11.4.0"
+    }
+}

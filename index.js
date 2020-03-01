@@ -347,7 +347,7 @@ client.on('message', message => {
             var turnToChar = {'0':'x', '1':'o'}
             if(msg.length == 2 && !isNaN(parseInt(msg[0])) && !isNaN(parseInt(msg[1])) && (idToBoard[id][parseInt(msg[1])-1][parseInt(msg[0])-1] === ' ')){
                 idToBoard[id][parseInt(msg[1])-1][parseInt(msg[0])-1] = turnToChar[(idToTurnNum[id] % 2).toString()]
-                result = checkWin(parseInt(msg[0])-1, parseInt(msg[1])-1, turnToChar[(idToTurnNum[id] % 2).toString()], idToBoard[id], idToTurnNum[id])
+                result = checkWin(parseInt(msg[1])-1, parseInt(msg[0])-1, turnToChar[(idToTurnNum[id] % 2).toString()], idToBoard[id], idToTurnNum[id])
                 if(result == 0){
                     idToTurn[id] = idToNextTurn[id]
                     idToNextTurn[id] = currTurn;
@@ -381,10 +381,10 @@ client.on('message', message => {
                 delete idToNextTurn[id]
                 delete idToTurnNum[id]
             }else{
-                message.reply('Please us the format like this: 32 to put it in the right middle slot or you place on a square that was already taken');
+                message.reply('Please use the format like this: 32 to put it in the right middle slot or you place on a square that was already taken');
             }
         }
-        if(message.content.startsWith('[typerole-allow]') && message.member.hasPermission('ADMINISTRATOR')){
+        if(message.content.startsWith('[typerole-allow]') && message.member.id == guild.ownerID){
             var newtyperole = message.mentions.roles.array();
             var typeroleChannel = message.channel;
             if(newtyperole.length === 0){

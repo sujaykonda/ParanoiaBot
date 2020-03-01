@@ -32,6 +32,7 @@ warn-channel-off - removes the warning channel
 typerole-allow - if you type in the channel you put this command in you get whatever role you mentioned after the command
 
 typerole-deny - removes the typerole
+
 demotion-allow - if a user reaches whatever amount of warning you inputed they get demoted, also you mention a role which is added if they lose all there 
 roles
 
@@ -69,3 +70,4 @@ reset-infractions-all - resets all infractions
 
 reset-infracitons - resets the person you typed infractions
 
+announce - announces something

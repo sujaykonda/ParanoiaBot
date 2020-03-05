@@ -212,11 +212,15 @@ client.on('guildBanAdd', (guild, user)=>{
     if(settings[guild.id][6] > 0){
         var dm = user.dmChannel
         if(!dm){
-            user.createDM()
-            dm = user.dmChannel
+            user.createDM().then(DMchannel =>{
+                DMchannel.send("You just got banned from " + guild.name + ' but they are letting you have a ban appeal. \n Please enter your ban appeal below in one message:')
+                banAppeals[user.id] = guild.id
+            })
         }
-        dm.send("You just got banned from " + guild.name + ' but they are letting you have a ban appeal. \n Please enter your ban appeal below in one message:')
-        banAppeals[user.id] = guild.id
+        else{
+            dm.send("You just got banned from " + guild.name + ' but they are letting you have a ban appeal. \n Please enter your ban appeal below in one message:')
+            banAppeals[user.id] = guild.id
+        }
     }
 })
 client.on('message', message => {
